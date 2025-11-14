@@ -1,4 +1,3 @@
-/* main.js */
 document.addEventListener('DOMContentLoaded',()=>{
   const year=document.getElementById('year');
   if(year) year.textContent=new Date().getFullYear();
@@ -74,4 +73,15 @@ document.addEventListener("DOMContentLoaded", () => {
     current = (current + 1) % slides.length;
     slides[current].classList.add("active");
   }, 7000);
+});
+
+
+// toggle per menù mobile
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("mobile-nav");
+
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
 });
