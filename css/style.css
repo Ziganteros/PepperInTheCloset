@@ -9,8 +9,57 @@ body{
     min-height:100vh}
 header{display:flex;align-items:center;justify-content:space-between;background:#0b1220;padding:12px 28px;box-shadow:0 1px 4px rgba(0,0,0,0.4)}
 .logo{font-weight:700;font-size:20px;background:linear-gradient(90deg,#e8a87c,#f6c9b2);color:#081126;padding:8px 14px;border-radius:8px}
-nav a{color:#e6eef6;text-decoration:none;margin:0 10px;padding:6px 10px;border-radius:8px;transition:0.2s}
-nav a:hover, nav a.active{background:#e8a87c;color:#081126}
+
+nav a{
+  color:#e6eef6;
+  text-decoration:none;
+  margin:0 10px;
+  padding:6px 10px;
+  border-radius:8px;
+  transition:0.2s}
+nav a:hover, nav a.active{
+  background:#e8a87c;
+  color:#081126}
+
+/* -------- DESKTOP -------- */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* hamburger nascosto su desktop */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* -------- MOBILE -------- */
+@media (max-width: 500px) {
+
+  /* Mostra pulsante hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Nav nascosta di default */
+  nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  /* Nav visibile quando attivata */
+  nav.open {
+    display: flex;
+  }
+}
+
 
 .hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
 .hero h1{font-size:2rem}
