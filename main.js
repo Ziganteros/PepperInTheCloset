@@ -103,3 +103,29 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.classList.toggle("open");
   });
 });
+
+
+// check dello status del back end delle app
+document.querySelectorAll("tbody tr").forEach(row => {
+  const link = row.querySelector("a");
+  const status = row.querySelector(".status");
+
+  const url = link.href;
+
+  function check() {
+    status.classList.remove("ok");
+
+    fetch(url + "/health")
+      .then(res => {
+        if (res.ok) {
+          status.classList.add("ok");
+        }
+      })
+      .catch(() => {
+        console.log("Offline:", url);
+      });
+  }
+
+  check();
+  // setInterval(check, 10000);
+});
